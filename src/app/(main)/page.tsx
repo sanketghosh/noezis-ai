@@ -1,17 +1,11 @@
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbList,
-  BreadcrumbPage,
-} from "@/components/ui/breadcrumb";
-import { Separator } from "@/components/ui/separator";
+// components
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { AppSidebar } from "./_components/sidebar/app-sidebar";
-import PromptBox from "./_components/prompt-box/prompt-box";
+import { AppSidebar } from "@/app/(main)/_components/sidebar/app-sidebar";
+import PromptBox from "@/app/(main)/_components/prompt-box/prompt-box";
 
 export default function Home() {
   return (
@@ -37,8 +31,8 @@ export default function Home() {
           </div>
         </header>
         <div className="flex min-h-[calc(100vh-56px)] items-center justify-center">
-          <div className="mx-auto flex w-full max-w-2xl flex-col space-y-6 px-4 md:space-y-12">
-            <h2 className="text-center text-6xl lowercase select-none md:text-7xl">
+          <div className="mx-auto flex w-full max-w-2xl flex-col space-y-6 px-4 md:space-y-8">
+            <h2 className="text-center text-6xl font-normal lowercase select-none md:text-7xl">
               noezis
             </h2>
             <PromptBox />

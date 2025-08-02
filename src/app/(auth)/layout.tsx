@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "membit | authentication",
+  title: "noezis | authentication",
   description:
-    "membit is a simple encrypted and online notes app makes your notes taking super easy.",
+    "Noezis is an AI-powered search engine that transforms your queries into deep, contextual insights — combining language models, real-time data, and intuitive reasoning to help you discover not just answers, but understanding.",
 };
 
 export default function AuthLayout({

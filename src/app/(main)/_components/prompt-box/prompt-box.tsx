@@ -1,12 +1,20 @@
 "use client";
 
+// packages
+import {
+  ArrowRightIcon,
+  GlobeIcon,
+  GraduationCapIcon,
+  LightbulbIcon,
+  SearchCheckIcon,
+  SparkleIcon,
+  UsersIcon,
+} from "lucide-react";
+import React, { useRef, useEffect, useState, ChangeEvent } from "react";
+
+// components
 import GeneralHoverCard from "@/components/shared/general-hover-card";
 import { Button } from "@/components/ui/button";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
 import {
   Popover,
   PopoverContent,
@@ -15,18 +23,6 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import {
-  ArrowRightIcon,
-  CircleDollarSignIcon,
-  GlobeIcon,
-  GraduationCapIcon,
-  LightbulbIcon,
-  SearchCheckIcon,
-  SparkleIcon,
-  UsersIcon,
-} from "lucide-react";
-// packages
-import React, { useRef, useEffect } from "react";
 
 type AutoResizeInputProps = {
   authenticatedUserId: string;
@@ -34,6 +30,12 @@ type AutoResizeInputProps = {
 
 export default function AutoResizeInput() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [promptText, setPromptText] = useState<string>();
+
+  //
+  function handleChangePrompt(e: ChangeEvent<HTMLTextAreaElement>) {
+    setPromptText(e.target.value);
+  }
 
   // auto resize textarea
   useEffect(() => {
@@ -77,7 +79,8 @@ export default function AutoResizeInput() {
           ref={textareaRef}
           className="transition-height max-h-40 min-h-20 w-full resize-none rounded-md border-r border-none bg-transparent outline-none"
           placeholder="So, what app you wanna build today ?"
-          //   value={prompt}
+          value={promptText}
+          onChange={handleChangePrompt}
           rows={1}
         />
         <Separator />

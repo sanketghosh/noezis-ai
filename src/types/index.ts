@@ -1,8 +1,11 @@
-export type SessionDataType = {
-  sessionCreatedAt: Date | undefined;
-  sessionExpiresAt: Date | undefined;
-  authenticatedUserId: string | undefined;
-  name: string | undefined;
-  email: string | undefined;
-  image: string | null | undefined;
-};
+export type SessionDataType =
+  | {
+      id: string;
+      email: string;
+      emailVerified: boolean;
+      name: string;
+      createdAt: Date;
+      updatedAt: Date;
+      image?: string | null | undefined | undefined;
+    }
+  | undefined;

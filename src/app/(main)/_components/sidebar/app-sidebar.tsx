@@ -1,8 +1,10 @@
 "use client";
 
+// packages
 import * as React from "react";
-import { BrainIcon, HomeIcon, PenBoxIcon, SearchIcon } from "lucide-react";
+import { BrainIcon } from "lucide-react";
 
+// components
 import {
   Sidebar,
   SidebarContent,
@@ -13,31 +15,11 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import { SidebarChats } from "./sidebar-chats";
-import { NavMain } from "./nav-main";
-import { NavUser } from "./nav-user";
+import { SidebarChats } from "@/app/(main)/_components/sidebar/sidebar-chats";
+import { NavMain } from "@/app/(main)/_components/sidebar/nav-main";
+import { NavUser } from "@/app/(main)/_components/sidebar/nav-user";
 
 // This is sample data.
-
-const sidebarOptions = [
-  {
-    title: "Home",
-    url: "#",
-    icon: HomeIcon,
-    isActive: true,
-  },
-  {
-    title: "New Chat",
-    url: "#",
-    icon: PenBoxIcon,
-    badge: "10",
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: SearchIcon,
-  },
-];
 
 const data = {
   user: {
@@ -534,14 +516,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
-        <NavMain items={sidebarOptions} />
+        <NavMain />
       </SidebarHeader>
       <SidebarContent>
         <SidebarChats favorites={data.favorites} />
       </SidebarContent>
       <SidebarRail />
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser />
       </SidebarFooter>
     </Sidebar>
   );

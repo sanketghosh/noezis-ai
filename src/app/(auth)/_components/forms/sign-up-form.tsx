@@ -78,7 +78,7 @@ export default function SignUpForm() {
   return (
     <div className="space-y-6">
       <AuthCardWrapper
-        title="noezis.dev - signup"
+        title="noezis - signup"
         description="just signup and get start building apps with AI in minutes."
         footerText="Already have an account ? SignIn"
         footerHref="/sign-in"
